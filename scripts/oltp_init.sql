@@ -84,7 +84,7 @@ CREATE TABLE booking_addon (
   booking_room INT,
   addon INT,
   quantity INT,
-  TIMESTAMP TIMESTAMP,
+  datetime TIMESTAMP,
   created_at TIMESTAMP,
   updated_at TIMESTAMP,
   FOREIGN KEY (booking_room) REFERENCES booking_room (id),
