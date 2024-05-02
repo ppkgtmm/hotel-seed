@@ -20,6 +20,6 @@ BEGIN
     PERFORM setval('booking_room_id_seq', booking_room_id);
     PERFORM setval('booking_addon_id_seq', booking_addon_id);
 END;
-$set_sequence$
+$set_sequence$;
 
 CALL set_sequence();
