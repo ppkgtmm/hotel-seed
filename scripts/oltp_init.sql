@@ -106,45 +106,36 @@ $timestamp_trigger$ LANGUAGE 'plpgsql';
 
 CREATE TRIGGER location_timestamp_trigger
 BEFORE INSERT OR UPDATE ON location
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER user_timestamp_trigger
 BEFORE INSERT OR UPDATE ON "user"
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER guest_timestamp_trigger
 BEFORE INSERT OR UPDATE ON guest
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER addon_timestamp_trigger
 BEFORE INSERT OR UPDATE ON addon
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER roomtype_timestamp_trigger
 BEFORE INSERT OR UPDATE ON roomtype
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER room_timestamp_trigger
 BEFORE INSERT OR UPDATE ON room
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER booking_timestamp_trigger
 BEFORE INSERT OR UPDATE ON booking
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER booking_room_timestamp_trigger
 BEFORE INSERT OR UPDATE ON booking_room
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
 
 CREATE TRIGGER booking_addon_timestamp_trigger
 BEFORE INSERT OR UPDATE ON booking_addon
-FOR EACH ROW
-EXECUTE PROCEDURE timestamp_trigger();
+FOR EACH ROW EXECUTE FUNCTION timestamp_trigger();
