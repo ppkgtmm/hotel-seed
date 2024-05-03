@@ -9,7 +9,7 @@ import pandas as pd
 load_dotenv()
 
 data_dir, bucket = getenv("SEED_DIR"), getenv("S3_BUCKET")
-makedirs(data_dir, exist_ok=True, mode=777)
+makedirs(data_dir, exist_ok=True)
 
 locations = pd.read_csv(getenv("LOCATION_FILE"))
 locations.to_csv(path.join(data_dir, "locations.csv"), index=False)
