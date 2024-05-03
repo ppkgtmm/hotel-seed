@@ -1,4 +1,3 @@
-from time import sleep
 from dotenv import load_dotenv
 from os import getenv
 import boto3
@@ -6,7 +5,6 @@ from botocore.credentials import InstanceMetadataProvider, InstanceMetadataFetch
 from os import makedirs, path
 import pandas as pd
 
-# sleep(200)
 
 load_dotenv()
 
