@@ -28,5 +28,4 @@ client = boto3.client(
 
 files = client.list_objects_v2(Bucket=bucket, Prefix=data_dir)
 for file in files["Contents"]:
-    file_path = path.join(data_dir, file["Key"])
-    client.download_file(bucket, file_path, file_path)
+    client.download_file(bucket, file["Key"], file["Key"])
