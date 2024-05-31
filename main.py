@@ -60,3 +60,4 @@ def populate_source_db(request):
     exec_read_query("scripts/oltp_post.sql", conn)
     conn.close()
     engine.dispose()
+    return "success"
