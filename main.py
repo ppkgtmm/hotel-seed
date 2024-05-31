@@ -38,7 +38,7 @@ def download_generated_data():
     bucket = storage.Client().get_bucket(getenv("GCS_BUCKET"))
     for blob in bucket.list_blobs(prefix=getenv("SEED_DIR")):
         blob_name = str(blob.name).split("/")[-1].split(".")[0]
-        yield (blob_name, bucket.blob(blob).download_as_text())
+        yield (blob_name, bucket.blob(blob.name).download_as_text())
 
 
 def populate_source_db(request):
