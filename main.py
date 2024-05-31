@@ -54,9 +54,12 @@ def populate_source_db(request):
         data = pd.read_csv(StringIO(blob_data))
         data.to_sql(table_mapping[blob_name], conn, index=False, if_exists="append")
     exec_read_query("scripts/oltp_seed.sql", conn)
-    booking_rooms, booking_addons = get_booking_rooms(conn), get_booking_addons(conn)
-    booking_rooms.to_sql("booking_room", conn, index=False, if_exists="append")
-    booking_addons.to_sql("booking_addon", conn, index=False, if_exists="append")
+    get_booking_rooms(conn).to_sql(
+        "booking_room", conn, index=False, if_exists="append"
+    )
+    get_booking_addons(conn).to_sql(
+        "booking_addon", conn, index=False, if_exists="append"
+    )
     exec_read_query("scripts/oltp_post.sql", conn)
     conn.close()
     engine.dispose()
