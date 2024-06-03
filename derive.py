@@ -66,7 +66,10 @@ def get_booking_addons(conn: Connection):
                 {
                     "addon": addon,
                     "quantity": random.randint(1, max_addon_quantity),
-                    "datetime": date + timedelta(hours=random.randint(0, 23)),
+                    "datetime": date
+                    + timedelta(
+                        hours=random.randint(0, 23), minutes=random.choice([0, 30])
+                    ),
                 }
                 for addon in chosen_addons
             ]
